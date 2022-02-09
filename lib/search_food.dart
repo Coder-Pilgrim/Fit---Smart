@@ -238,11 +238,10 @@ class FoodInfo extends StatelessWidget {
   setProperties() async {
     //Food Data
     String? apikey = dotenv.env['FOODDATA_API'];
-    //Yedek Anahtar "d0EqjBBQvpLPM1EfSJrekadYvfFzzHdWDpYZBGdx".
 
     try {
       Uri uri = Uri.parse(
-          "https://api.nal.usda.gov/fdc/v1/foods/search?query=$foodName&pageSize=2&api_key=$apikey");
+          ""); //provide uri here
       http.Response response = await http.get(uri);
       String data;
       var decodedData;
@@ -286,13 +285,10 @@ class FoodInfo extends StatelessWidget {
   Future<void> setImageForFood() async {
     //Pixabay
     String? apikey = dotenv.env['IMAGE_API'];
-    //Yedek Anahtar "25273848-ee71d21fc61d528765fdd1574",
-    //              "25274200-4b961e2da5e27bd975e52cfca",
-    //              "25274210-4c294e8b0bdbaeacf1482a4d0".
 
     try {
       Uri uri = Uri.parse(
-          "http://pixabay.com/api/?key=$apikey&q=$foodName&image_type=photo&pretty=true");
+          ""); //proivde uri here
       http.Response response = await http.get(uri);
       String data;
       var decodedData;
